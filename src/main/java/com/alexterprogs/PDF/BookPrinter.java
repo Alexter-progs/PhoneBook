@@ -4,6 +4,8 @@ import com.alexterprogs.Person;
 import com.itextpdf.text.*;
 import com.itextpdf.text.pdf.*;
 
+import javax.print.*;
+import javax.print.attribute.HashPrintRequestAttributeSet;
 import javax.swing.table.DefaultTableModel;
 import java.io.*;
 import java.util.*;
@@ -33,22 +35,24 @@ public class BookPrinter {
     public void save(String str, DefaultTableModel tblModel){
         try {
             FileOutputStream fos = new FileOutputStream(str);
-            generateBook(fos, tblModel);
+            generateBook(fos, tblModel, true);
         } catch (IOException e){
             e.printStackTrace();
         }
     }
 
     public void print(DefaultTableModel tblModel){
-        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        generateBook(baos, tblModel);
+        //ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        //generateBook(baos, tblModel, false);
+
     }
 
-    private void generateBook(OutputStream os, DefaultTableModel tblModel){
+    private void generateBook(OutputStream os, DefaultTableModel tblModel, boolean isCloseStream){
         try {
             Document doc = new Document();
             PdfWriter writer = PdfWriter.getInstance(doc, os);
 
+            writer.setCloseStream(isCloseStream);
 
             doc.open();
             writeTitlePageWithImage(doc, writer);
