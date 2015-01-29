@@ -46,20 +46,20 @@ public class GUI extends JFrame {
             //JMenuItem newItem = new JMenuItem("Новый...");
             //JMenuItem openItem = new JMenuItem("Открыть...");
             JMenuItem saveItem = new JMenuItem("Сохранить...");
-            JMenuItem printItem = new JMenuItem("Печать");
+            //JMenuItem printItem = new JMenuItem("Печать");
             JMenuItem closeItem = new JMenuItem("Закрыть");
 
             /* Listeners */
             //newItem.addActionListener(new NewProjectListener());
             //openItem.addActionListener(new OpenProjectListener());
             saveItem.addActionListener(new SaveProjectListener());
-            printItem.addActionListener(new PrintBookListener());
+            //printItem.addActionListener(new PrintBookListener());
             closeItem.addActionListener(l -> dispose());
 
             //fileMenu.add(newItem);
             //fileMenu.add(openItem);
             fileMenu.add(saveItem);
-            fileMenu.add(printItem);
+            //fileMenu.add(printItem);
             fileMenu.addSeparator();
             fileMenu.add(closeItem);
 
