@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Telephone book:jar2">
+    <output-path>$PROJECT_DIR$/out/artifacts/Telephone_book_jar2</output-path>
+    <root id="archive" name="Telephone book.jar">
+      <element id="module-output" name="Telephone book" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/itextpdf/itextpdf/5.5.4/itextpdf-5.5.4.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
